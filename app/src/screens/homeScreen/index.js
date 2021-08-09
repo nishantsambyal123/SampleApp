@@ -11,7 +11,7 @@ const homeScreen = () => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
+    borderWidth: 1,
   },
 });
 

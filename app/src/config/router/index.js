@@ -9,7 +9,7 @@ const appStackEntry = () => {
   function HomeStack() {
     return (
       <Stack.Navigator headerMode="screen">
-        <Stack.Screen name="HomeScreen" component={Screens.HomeScreen} />
+        <Stack.Screen name="HomeScreen" component={Screens.LoginScreen} />
       </Stack.Navigator>
     );
   }

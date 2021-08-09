@@ -1,16 +1,27 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {TextInput} from '../../components';
+import {View, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import {TextInput, Button} from '../../components';
+import Constants from '../../constants/constants';
 
 const login = () => {
   return (
     <View style={styles.mainContainer}>
-      <View style={styles.formView}>
-        <TextInput style={styles.inputText} placeholder={'Username'} />
-        <View style={styles.bottomTextInput}>
-          <TextInput style={styles.inputText} placeholder={'Password'} />
+      <KeyboardAvoidingView style={styles.mainContainer} behavior="padding">
+        <View style={styles.formView}>
+          <TextInput placeholder={Constants.USER_NAME} />
+          <View style={styles.bottomTextInput}>
+            <TextInput
+              placeholder={Constants.PASSWORD}
+              secureTextEntry={true}
+            />
+          </View>
+
+          <View style={styles.buttonContainer}>
+            <Button style={styles.button} title={Constants.REGISTER} />
+            <Button style={styles.button} title={Constants.LOGIN} />
+          </View>
         </View>
-      </View>
+      </KeyboardAvoidingView>
     </View>
   );
 };
@@ -21,15 +32,20 @@ const styles = StyleSheet.create({
   },
   formView: {
     flex: 1,
-    width: '80%',
+    width: '70%',
     justifyContent: 'center',
     alignSelf: 'center',
   },
-  inputText: {
-    // width: '80%',
-  },
   bottomTextInput: {
     marginTop: 10,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    marginTop: 20,
+  },
+  button: {
+    width: '40%',
   },
 });
 

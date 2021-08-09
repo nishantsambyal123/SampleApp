@@ -3,7 +3,7 @@ import {TextInput, StyleSheet} from 'react-native';
 import {rgbaColors, colors} from '../../constants/colors';
 
 const text = props => {
-  const {placeholder, onChangeText, style} = props;
+  const {placeholder, onChangeText, style, secureTextEntry} = props;
 
   const makeInputStyles = () => ({
     ...styles.borderColor,
@@ -15,6 +15,7 @@ const text = props => {
       style={{...makeInputStyles()}}
       onChangeText={onChangeText}
       placeholder={placeholder}
+      secureTextEntry={secureTextEntry}
       placeholderTextColor={rgbaColors.textInputBorder}
     />
   );

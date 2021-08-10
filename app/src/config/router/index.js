@@ -11,11 +11,13 @@ import Screens from '../../screens';
 const AppStackEntry = props => {
   const {setLoggedInUser, isLoggedIn} = props;
   const Stack = createNativeStackNavigator();
+  console.log('isLoggedIn', isLoggedIn);
 
   useEffect(() => {
     getAsyncStorage(LOGGED_IN_USER).then(userInfo => {
       if (userInfo) {
-        setLoggedInUser(userInfo);
+        console.log('userInfo', JSON.parse(userInfo));
+        setLoggedInUser(JSON.parse(userInfo)[0]);
       }
     });
   }, [setLoggedInUser]);
@@ -36,13 +38,13 @@ const AppStackEntry = props => {
   }
   return (
     <NavigationContainer>
-      {!isLoggedIn ? <HomeStack /> : <AuthStack />}
+      {!isLoggedIn ? <AuthStack /> : <HomeStack />}
     </NavigationContainer>
   );
 };
 
 function mapStateToProps({LoginReducer}) {
-  return {isLoggedIn: LoginReducer.data};
+  return {isLoggedIn: LoginReducer.isLoggedIn};
 }
 
 function mapDispatchToProps(dispatch) {

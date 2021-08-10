@@ -1,2 +1,13 @@
 export const SAVE_LOGIN_USER = 'SAVE_LOGIN_USER';
+export const SAVE_LOGIN_USER_ERROR = 'SAVE_LOGIN_USER_ERROR';
 export const GET_LOGIN_USER = 'GET_LOGIN_USER';
+export const LOGIN_USER_FAILED = 'LOGIN_USER_FAILED';
+export const CLEAR_LOGIN_REDUCER = 'CLEAR_LOGIN_REDUCER';
+export const LOGOUT_USER = 'LOGOUT_USER';
+
+/**
+ * Home Screen Actions
+ */
+export const DUMMY_API_SUCCESS = 'DUMMY_API_SUCCESS';
+export const DUMMY_API_PROGRESS = 'DUMMY_API_PROGRESS';
+export const DUMMY_API_FAILURE = 'DUMMY_API_FAILURE';

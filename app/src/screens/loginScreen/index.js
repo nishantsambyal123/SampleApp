@@ -99,13 +99,13 @@ const Login = props => {
               title={Constants.LOGIN}
               onPress={loginUserClick}
             />
-            <Button
+            {/* <Button
               style={styles.button}
               title={'clear'}
               onPress={() => {
                 clearAsyncStorage();
               }}
-            />
+            /> */}
           </View>
         </View>
       </KeyboardAvoidingView>
@@ -113,7 +113,6 @@ const Login = props => {
   );
 };
 function mapStateToProps({LoginReducer}) {
-  console.log('LoginReducer', LoginReducer);
   return {
     error: LoginReducer.error,
     isError: LoginReducer.isError,

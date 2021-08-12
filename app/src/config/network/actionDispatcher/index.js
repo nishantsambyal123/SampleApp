@@ -15,7 +15,6 @@ function dispatchResponseToReducers(
         }
       })
       .then(responseJson => {
-        console.log('responseJson', responseJson);
         dispatch({
           type: actionTypeSuccess,
           payload: responseJson,

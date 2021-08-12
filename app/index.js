@@ -12,11 +12,11 @@ import store from './src/redux/store';
 const App = () => {
   return (
     <Provider store={store}>
-      <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      {/* <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}> */}
         <View style={styles.mainContainer}>
           <AppStackEntry />
         </View>
-      </TouchableWithoutFeedback>
+      {/* </TouchableWithoutFeedback> */}
     </Provider>
   );
 };
